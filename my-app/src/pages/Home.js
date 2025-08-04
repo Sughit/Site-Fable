@@ -1,12 +1,17 @@
-import React from "react";
+import React from 'react';
+import Navbar from '../components/Navbar';
 
-const Home = () => {
+export default function Home() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-4">Bine ai venit în Fable Builder!</h1>
-      <p>Folosește editorul pentru a construi roboți modulari folosind blocuri 3D.</p>
+    <div className="relative h-screen overflow-hidden">
+      {/* Navbar overlay */}
+      <Navbar />
+
+      {/* Main content: add top padding to avoid navbar overlap and enable scrolling */}
+      <div className="h-full pt-16 overflow-auto px-4">
+        {/* TODO: Insert your existing Home page content here */}
+        Text test
+      </div>
     </div>
   );
-};
-
-export default Home;
+}

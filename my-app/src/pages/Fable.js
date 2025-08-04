@@ -1,13 +1,26 @@
-import React from "react";
+import React from 'react';
+import FableCanvas from '../components/FableCanvas';
+import CodeEditor from '../components/CodeEditor';
+import Navbar from '../components/Navbar';
 
-const Fable = () => {
+export default function Fable() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-4">Editor Fable</h1>
-      <p>Aici vei putea construi roboți din componente și vei scrie codul pentru simulare.</p>
-      {/* Aici vei adăuga panourile de 3D și cod */}
+    <div className="relative h-screen overflow-hidden">
+      {/* Navbar overlay */}
+      <Navbar />
+
+      {/* Main content: add padding to avoid navbar overlap */}
+      <div className="flex h-full pt-16">
+        {/* Left: Simulation canvas */}
+        <div className="w-1/2 bg-gray-900 p-4 overflow-hidden">
+          <FableCanvas />
+        </div>
+
+        {/* Right: Blockly code editor */}
+        <div className="w-1/2 bg-gray-100 p-4 overflow-auto">
+          <CodeEditor />
+        </div>
+      </div>
     </div>
   );
-};
-
-export default Fable;
+}
