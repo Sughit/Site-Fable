@@ -87,7 +87,6 @@ function CameraMovement({ speed = 5 }) {
     forward.normalize()
 
     // right vector — folosesc forward x up (cum am discutat),
-    //test Git
     // și aplic A=add(right), D=sub(right)
     const right = new THREE.Vector3().crossVectors(forward, camera.up).normalize()
 
